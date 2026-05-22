@@ -1,224 +1,264 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
+.sec{margin-bottom:1.75rem;}
 .st{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;padding-bottom:5px;border-bottom:.5px solid var(--color-border-tertiary);}
 .mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:1.5rem;}
 .mc{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px 13px;}
 .ml{font-size:11px;color:var(--color-text-secondary);margin-bottom:3px;}
-.mv{font-size:20px;font-weight:500;}
+.mv{font-size:20px;font-weight:500;color:var(--color-text-primary);}
 .ms{font-size:10px;color:var(--color-text-tertiary);margin-top:2px;}
 .bx{font-size:10px;padding:2px 6px;border-radius:99px;font-weight:500;white-space:nowrap;}
 .hit{background:#EAF3DE;color:#3B6D11;}
 .miss{background:#FCEBEB;color:#A32D2D;}
 .pend{background:#FAEEDA;color:#854F0B;}
-.sec{margin-bottom:1.75rem;}
-t{width:100%;border-collapse:collapse;font-size:11.5px;}
-t th{font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);text-align:right;}
-t th:first-child{text-align:left;}
-t td{padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);text-align:right;color:var(--color-text-primary);}
-t td:first-child{text-align:left;color:var(--color-text-secondary);}
-t tr:last-child td{border-bottom:none;}
-t tr.sep td{background:var(--color-background-secondary);font-weight:500;border-top:.5px solid var(--color-border-tertiary);}
-t tr.sep td:first-child{color:var(--color-text-primary);}
-.b{color:#185FA5;font-weight:500;}
-.w{color:#A32D2D;}
-.m{color:#854F0B;}
-.note{border-left:2px solid #378ADD;border-radius:0 6px 6px 0;padding:8px 12px;font-size:11.5px;color:var(--color-text-secondary);line-height:1.6;margin-top:10px;}
-.notew{border-left-color:#EF9F27;}
-.fr-row{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
-.fr-lbl{font-size:11px;color:var(--color-text-secondary);width:155px;flex-shrink:0;}
-.fr-wrap{flex:1;background:var(--color-background-secondary);border-radius:3px;height:14px;overflow:hidden;}
-.fr-bar{height:100%;border-radius:3px;}
-.fr-pct{font-size:11px;color:var(--color-text-secondary);width:36px;text-align:right;flex-shrink:0;}
-.fr-drop{font-size:10px;color:#A32D2D;width:50px;text-align:right;flex-shrink:0;}
+.info{background:#E6F1FB;color:#185FA5;}
+table{width:100%;border-collapse:collapse;font-size:11.5px;}
+th{font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);text-align:right;white-space:nowrap;}
+th:first-child{text-align:left;}
+td{padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);text-align:right;color:var(--color-text-primary);white-space:nowrap;}
+td:first-child{text-align:left;color:var(--color-text-secondary);font-size:11px;}
+tr:last-child td{border-bottom:none;}
+tr.grp td{background:var(--color-background-secondary);font-weight:500;border-top:.5px solid var(--color-border-tertiary);}
+tr.grp td:first-child{color:var(--color-text-primary);}
+tr.best-row td:first-child{font-weight:500;color:var(--color-text-primary);}
+.note{border-left:2px solid var(--color-border-secondary);border-radius:0 6px 6px 0;padding:8px 12px;font-size:11.5px;color:var(--color-text-secondary);line-height:1.65;margin-top:10px;}
+.drop{font-size:10px;padding:1px 4px;border-radius:3px;margin-left:2px;font-weight:500;}
+.drop-lg{background:#FCEBEB;color:#A32D2D;}
+.drop-md{background:#FAEEDA;color:#854F0B;}
+.drop-sm{color:var(--color-text-tertiary);font-size:10px;margin-left:2px;}
 .leg{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--color-text-secondary);margin-bottom:10px;}
-.ld{width:8px;height:8px;border-radius:2px;flex-shrink:0;}
+.ld{width:9px;height:9px;border-radius:2px;flex-shrink:0;display:inline-block;vertical-align:middle;margin-right:4px;}
 </style>
 
 <div style="padding:1rem 0;">
-<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">에밀리타운 2차 베타 테스트 종합 분석 요약</h2>
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">에밀리타운 2차 베타 테스트 종합 분석 보고서 v3</h2>
 
+<!-- 1. KPI 달성 현황 -->
 <div class="sec">
-  <div class="st">KPI 달성 현황</div>
+  <div class="st">KPI 달성 현황 — 2, 3차 베타테스트 KPI</div>
   <div class="mg">
-    <div class="mc"><div class="ml">D1 재방문율</div><div class="mv" style="color:#854F0B;">37.0%</div><div class="ms"><span class="bx miss">KPI 43% — -6%p</span></div></div>
-    <div class="mc"><div class="ml">D3 재방문율</div><div class="mv">21.4%</div><div class="ms"><span class="bx pend">기준 수립 중</span></div></div>
-    <div class="mc"><div class="ml">D7 재방문율</div><div class="mv">12.2%</div><div class="ms">참고용</div></div>
-    <div class="mc"><div class="ml">D0 구매 전환율</div><div class="mv" style="color:#3B6D11;">1.64%</div><div class="ms"><span class="bx hit">KPI 1% 달성</span></div></div>
+    <div class="mc">
+      <div class="ml">Order KPI 달성율</div>
+      <div class="mv">75.8%</div>
+      <div class="ms"><span class="bx miss">KPI 83% 미달 (-7.2%p)</span></div>
+    </div>
+    <div class="mc">
+      <div class="ml">D1 재방문율</div>
+      <div class="mv">37.0%</div>
+      <div class="ms"><span class="bx miss">KPI 43% 미달 (-6%p)</span></div>
+    </div>
+    <div class="mc">
+      <div class="ml">D3 재방문율</div>
+      <div class="mv">21.4%</div>
+      <div class="ms"><span class="bx pend">기준 수립 중</span></div>
+    </div>
+    <div class="mc">
+      <div class="ml">D7 재방문율</div>
+      <div class="mv">12.2%</div>
+      <div class="ms">참고용</div>
+    </div>
+    <div class="mc">
+      <div class="ml">D0 구매 전환율</div>
+      <div class="mv">1.64%</div>
+      <div class="ms"><span class="bx hit">KPI 1% 달성</span></div>
+    </div>
   </div>
 </div>
 
+<!-- 2. 비용·설치·재방문율 -->
 <div class="sec">
   <div class="st">비용 · 설치 · 재방문율 — 캠페인 3종 비교</div>
-  <table is="t" style="width:100%;border-collapse:collapse;font-size:11.5px;">
+  <table>
     <thead>
       <tr>
-        <th style="text-align:left;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">지표</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">전체</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">action_text (Google)</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">install (Google)</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">install (Meta)</th>
+        <th style="text-align:left;">지표</th>
+        <th>전체</th>
+        <th>action_text (Google)</th>
+        <th>install (Google)</th>
+        <th>install (Meta)</th>
       </tr>
     </thead>
     <tbody>
-      <tr style="background:var(--color-background-secondary);">
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-primary);font-weight:500;">비용 · 설치</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);"></td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);"></td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);"></td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);"></td>
-      </tr>
+      <tr class="grp"><td>비용 · 설치</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>집행 비용</td><td>$9,317</td><td>$2,969</td><td>$2,095</td><td>$4,253</td></tr>
+      <tr><td>Install</td><td>3,877</td><td>1,221</td><td>1,299</td><td>1,357</td></tr>
+      <tr><td>CPI</td><td>$2.40</td><td>$2.43</td><td>$1.61</td><td>$3.13</td></tr>
+      <tr class="grp"><td>재방문율</td><td></td><td></td><td></td><td></td></tr>
       <tr>
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">집행 비용</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$9,317</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2,969</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2,095</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$4,253</td>
+        <td>D1 RR</td><td>37.0%</td>
+        <td>41.9% <span class="bx info" style="font-size:9px;">KPI 근접</span></td>
+        <td>30.6%</td>
+        <td>38.5%</td>
       </tr>
-      <tr>
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">Install / NRU</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">3,877 / 3,841</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">1,221 / 1,212</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">1,299 / 1,286</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">1,357 / 1,343</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">CPI</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.40</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.43</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#3B6D11;font-weight:500;">$1.61</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$3.13</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">CPA (NRU 기준)</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.43</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.45</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#3B6D11;font-weight:500;">$1.63</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$3.17</td>
-      </tr>
-      <tr style="background:var(--color-background-secondary);">
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-primary);font-weight:500;border-top:.5px solid var(--color-border-tertiary);">재방문율</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);border-top:.5px solid var(--color-border-tertiary);"></td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);border-top:.5px solid var(--color-border-tertiary);"></td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);border-top:.5px solid var(--color-border-tertiary);"></td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);border-top:.5px solid var(--color-border-tertiary);"></td>
-      </tr>
-      <tr>
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">D1 RR</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">37.0%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#185FA5;font-weight:500;">41.9% <span style="font-size:9px;background:#E6F1FB;color:#185FA5;padding:1px 4px;border-radius:3px;">KPI 근접</span></td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">30.6%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">38.5%</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">D3 RR</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">21.4%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#185FA5;font-weight:500;">25.5%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">16.2%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">22.5%</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">D7 RR</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">12.2%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#185FA5;font-weight:500;">13.6%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">9.1%</td>
-        <td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">13.6%</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;padding:5px 7px;color:var(--color-text-secondary);">CPD1 (D1유저 단가)</td>
-        <td style="text-align:right;padding:5px 7px;">$6.30</td>
-        <td style="text-align:right;padding:5px 7px;">$5.78</td>
-        <td style="text-align:right;padding:5px 7px;color:#3B6D11;font-weight:500;">$5.29</td>
-        <td style="text-align:right;padding:5px 7px;color:#A32D2D;">$7.49</td>
-      </tr>
+      <tr><td>D3 RR</td><td>21.4%</td><td>25.5%</td><td>16.2%</td><td>22.5%</td></tr>
+      <tr><td>D7 RR</td><td>12.2%</td><td>13.6%</td><td>9.1%</td><td>13.6%</td></tr>
+      <tr><td>CPD1 (D1유저 단가)</td><td>$6.30</td><td>$5.78</td><td>$5.29</td><td>$7.49</td></tr>
     </tbody>
   </table>
-  <div class="note" style="margin-top:10px;">install(Google) CPI·CPA·CPD1 모두 수치상 최저이나 D1 RR 30.6%로 최저 — 저단가는 저품질 유저 반영. action_text(Google)는 D1~D7 전 구간 1위, KPI 43%까지 -2.1%p. Meta는 단가 최고·CPD1 $7.49이지만 D1 절대 유저수(568명) 최다.</div>
+  <div class="note">install(Google) CPI·CPD1 모두 수치상 최저이나 D1 RR 30.6%로 최저 — 저단가는 유저 품질 열위 반영. action_text(Google)는 D1~D7 전 구간 1위, KPI 43%까지 -2.1%p. Meta는 단가 최고·CPD1 $7.49이나 D1 절대 유저수(568명) 최다.</div>
 </div>
 
+<!-- 3. 퍼널 달성율 (인스톨 대비) -->
 <div class="sec">
-  <div class="st">퍼널 달성율 — CSV raw 이벤트 기준 (N=3,898)</div>
+  <div class="st">퍼널 달성율 — 인스톨 대비, 캠페인 3종 비교</div>
   <div class="leg">
-    <div style="display:flex;align-items:center;gap:5px;"><span class="ld" style="background:#185FA5;"></span>action_text (G) — 1,229명</div>
-    <div style="display:flex;align-items:center;gap:5px;"><span class="ld" style="background:#EF9F27;"></span>install (G) — 1,313명</div>
-    <div style="display:flex;align-items:center;gap:5px;"><span class="ld" style="background:#1D9E75;"></span>install (Meta) — 1,356명</div>
+    <span><span class="ld" style="background:#888780;"></span>action_text (Google) N=1,229</span>
+    <span><span class="ld" style="background:#888780;border:0.5px solid var(--color-border-secondary);"></span>install (Google) N=1,313</span>
+    <span><span class="ld" style="background:#B4B2A9;"></span>install (Meta) N=1,356</span>
+    <span style="margin-left:4px;"><span class="drop drop-lg" style="margin:0 2px 0 0;">▼</span>최대낙폭 &nbsp;<span class="drop drop-md" style="margin:0 2px 0 0;">▼</span>주요낙폭</span>
   </div>
-
-  <div class="fr-row">
-    <div class="fr-lbl">회원가입</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:98.7%;background:#B5D4F4;"></div></div>
-    <div class="fr-pct">98.7%</div>
-    <div style="font-size:10px;color:var(--color-text-tertiary);width:130px;text-align:right;flex-shrink:0;">G:98.9% · G_inst:98.2% · Meta:99.0%</div>
-  </div>
-  <div class="fr-row">
-    <div class="fr-lbl">튜토리얼 오더1</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:91.5%;background:#85B7EB;"></div></div>
-    <div class="fr-pct">91.5%</div>
-    <div style="font-size:10px;color:var(--color-text-tertiary);width:130px;text-align:right;flex-shrink:0;">G:94.2% · G_inst:88.7% · Meta:91.9%</div>
-  </div>
-  <div class="fr-row">
-    <div class="fr-lbl">Order KPI</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:75.8%;background:#5DCAA5;"></div></div>
-    <div class="fr-pct">75.8%</div>
-    <div style="font-size:10px;color:var(--color-text-tertiary);width:130px;text-align:right;flex-shrink:0;">G:81.4% · G_inst:67.1% · Meta:79.2%</div>
-  </div>
-  <div class="fr-row">
-    <div class="fr-lbl">Lv.5</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:62.5%;background:#378ADD;"></div></div>
-    <div class="fr-pct">62.5%</div>
-    <div style="font-size:10px;color:var(--color-text-tertiary);width:130px;text-align:right;flex-shrink:0;">G:69.5% · G_inst:53.4% · Meta:64.9%</div>
-  </div>
-  <div class="fr-row">
-    <div class="fr-lbl">Lv.7</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:46.0%;background:#185FA5;"></div></div>
-    <div class="fr-pct">46.0%</div>
-    <div style="font-size:10px;color:var(--color-text-tertiary);width:130px;text-align:right;flex-shrink:0;">G:55.2% · G_inst:36.3% · Meta:47.0%</div>
-  </div>
-  <div class="fr-row">
-    <div class="fr-lbl" style="color:#A32D2D;font-weight:500;">Lv.9 ▼ 최대 낙차</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:23.9%;background:#0C447C;"></div></div>
-    <div class="fr-pct">23.9%</div>
-    <div style="font-size:10px;color:#A32D2D;width:130px;text-align:right;flex-shrink:0;">G:29.8% · G_inst:17.8% · Meta:24.3%</div>
-  </div>
-  <div class="fr-row">
-    <div class="fr-lbl">Lv.10</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:12.5%;background:#042C53;"></div></div>
-    <div class="fr-pct">12.5%</div>
-    <div style="font-size:10px;color:var(--color-text-tertiary);width:130px;text-align:right;flex-shrink:0;">G:16.0% · G_inst:10.1% · Meta:11.7%</div>
-  </div>
-  <div class="fr-row">
-    <div class="fr-lbl">구매(결제)</div>
-    <div class="fr-wrap"><div class="fr-bar" style="width:3.9%;background:#3B6D11;"></div></div>
-    <div class="fr-pct">3.9%</div>
-    <div style="font-size:10px;color:var(--color-text-tertiary);width:130px;text-align:right;flex-shrink:0;">G:4.6% · G_inst:3.8% · Meta:3.2%</div>
-  </div>
-  <div class="note notew" style="margin-top:10px;">Lv.5→Lv.9 공통 최대 낙차 구간 (-22.1%p). 3종 모두 동일 — 챕터 1 콘텐츠 한계 반영. 3차 챕터 2 추가 후 이 구간 이탈 완화 여부가 핵심 검증 포인트.</div>
-</div>
-
-<div class="sec">
-  <div class="st">퍼널 단계별 단가 (비용 ÷ 도달 유저)</div>
-  <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+  <table>
     <thead>
       <tr>
-        <th style="text-align:left;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">단계</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">전체</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">action_text (G)</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">install (G)</th>
-        <th style="text-align:right;font-size:10.5px;color:var(--color-text-tertiary);font-weight:500;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">install (Meta)</th>
+        <th style="text-align:left;width:130px;">퍼널 단계</th>
+        <th>전체<br><span style="font-weight:400;font-size:10px;">(낙폭)</span></th>
+        <th>action_text<br><span style="font-weight:400;font-size:10px;">(Google)</span></th>
+        <th>install<br><span style="font-weight:400;font-size:10px;">(Google)</span></th>
+        <th>install<br><span style="font-weight:400;font-size:10px;">(Meta)</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr><td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">회원가입</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.42</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.44</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#3B6D11;font-weight:500;">$1.63</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$3.17</td></tr>
-      <tr><td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">튜토리얼 오더1</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.61</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$2.56</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#3B6D11;font-weight:500;">$1.80</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$3.41</td></tr>
-      <tr style="background:var(--color-background-secondary);"><td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-primary);font-weight:500;border-top:.5px solid var(--color-border-tertiary);">Order KPI</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$3.15</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$2.97</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#3B6D11;font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$2.38</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$3.96</td></tr>
-      <tr><td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">Lv.5</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$3.83</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$3.48</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#3B6D11;font-weight:500;">$2.99</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$4.83</td></tr>
-      <tr><td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">Lv.7</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$5.20</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#185FA5;font-weight:500;">$4.37</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$4.39</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$6.68</td></tr>
-      <tr><td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">Lv.9</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$10.02</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#185FA5;font-weight:500;">$8.11</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$8.95</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$12.89</td></tr>
-      <tr><td style="text-align:left;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);">Lv.10</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$19.09</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#185FA5;font-weight:500;">$15.07</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);">$15.75</td><td style="text-align:right;padding:5px 7px;border-bottom:.5px solid var(--color-border-tertiary);color:#A32D2D;">$26.92</td></tr>
-      <tr style="background:var(--color-background-secondary);"><td style="text-align:left;padding:5px 7px;color:var(--color-text-primary);font-weight:500;border-top:.5px solid var(--color-border-tertiary);">구매(결제)</td><td style="text-align:right;padding:5px 7px;font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$61.70</td><td style="text-align:right;padding:5px 7px;font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$52.08</td><td style="text-align:right;padding:5px 7px;color:#3B6D11;font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$41.90</td><td style="text-align:right;padding:5px 7px;color:#A32D2D;font-weight:500;border-top:.5px solid var(--color-border-tertiary);">$96.67</td></tr>
+      <tr class="grp"><td>인스톨</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td></tr>
+      <tr>
+        <td>회원가입</td>
+        <td>98.7% <span class="drop-sm">▼1.3</span></td>
+        <td>98.9% <span class="drop-sm">▼1.1</span></td>
+        <td>98.2% <span class="drop-sm">▼1.8</span></td>
+        <td>99.0% <span class="drop-sm">▼1.0</span></td>
+      </tr>
+      <tr>
+        <td>첫 합성</td>
+        <td>94.7% <span class="drop-sm">▼4.0</span></td>
+        <td>96.2% <span class="drop-sm">▼2.8</span></td>
+        <td>92.9% <span class="drop drop-md">▼5.3</span></td>
+        <td>95.1% <span class="drop-sm">▼3.9</span></td>
+      </tr>
+      <tr>
+        <td>튜토리얼 오더1</td>
+        <td>91.5% <span class="drop-sm">▼3.2</span></td>
+        <td>94.2% <span class="drop-sm">▼2.0</span></td>
+        <td>88.7% <span class="drop drop-md">▼4.3</span></td>
+        <td>91.9% <span class="drop-sm">▼3.2</span></td>
+      </tr>
+      <tr>
+        <td>Order KPI</td>
+        <td>75.8% <span class="drop drop-lg">▼15.7</span></td>
+        <td>81.4% <span class="drop drop-lg">▼12.8</span></td>
+        <td>67.1% <span class="drop drop-lg">▼21.6</span></td>
+        <td>79.2% <span class="drop drop-lg">▼12.7</span></td>
+      </tr>
+      <tr class="grp"><td colspan="5" style="font-size:10px;color:var(--color-text-tertiary);font-weight:400;padding:3px 7px;">─── 레벨 진행 구간 ───</td></tr>
+      <tr>
+        <td>Lv.2</td>
+        <td>81.9% <span class="drop drop-md">▼9.7</span></td>
+        <td>86.9% <span class="drop drop-md">▼7.3</span></td>
+        <td>74.9% <span class="drop drop-lg">▼13.8</span></td>
+        <td>84.1% <span class="drop drop-md">▼7.8</span></td>
+      </tr>
+      <tr>
+        <td>Lv.3</td>
+        <td>76.8% <span class="drop-sm">▼5.1</span></td>
+        <td>81.9% <span class="drop-sm">▼5.0</span></td>
+        <td>68.6% <span class="drop drop-md">▼6.2</span></td>
+        <td>79.9% <span class="drop-sm">▼4.1</span></td>
+      </tr>
+      <tr>
+        <td>Lv.4</td>
+        <td>68.4% <span class="drop drop-md">▼8.3</span></td>
+        <td>74.8% <span class="drop drop-md">▼7.2</span></td>
+        <td>59.3% <span class="drop drop-md">▼9.4</span></td>
+        <td>71.5% <span class="drop drop-md">▼8.4</span></td>
+      </tr>
+      <tr>
+        <td>Lv.5</td>
+        <td>62.5% <span class="drop-sm">▼6.0</span></td>
+        <td>69.5% <span class="drop-sm">▼5.3</span></td>
+        <td>53.4% <span class="drop-sm">▼5.9</span></td>
+        <td>64.9% <span class="drop drop-md">▼6.6</span></td>
+      </tr>
+      <tr>
+        <td>Lv.6</td>
+        <td>57.9% <span class="drop-sm">▼4.6</span></td>
+        <td>65.7% <span class="drop-sm">▼3.8</span></td>
+        <td>48.4% <span class="drop-sm">▼5.0</span></td>
+        <td>60.0% <span class="drop-sm">▼4.9</span></td>
+      </tr>
+      <tr>
+        <td>Lv.7</td>
+        <td>46.0% <span class="drop drop-lg">▼11.9</span></td>
+        <td>55.2% <span class="drop drop-lg">▼10.4</span></td>
+        <td>36.3% <span class="drop drop-lg">▼12.0</span></td>
+        <td>47.0% <span class="drop drop-lg">▼13.0</span></td>
+      </tr>
+      <tr>
+        <td>Lv.8</td>
+        <td>39.0% <span class="drop-sm">▼7.0</span></td>
+        <td>47.0% <span class="drop drop-md">▼8.2</span></td>
+        <td>30.6% <span class="drop-sm">▼5.7</span></td>
+        <td>39.7% <span class="drop drop-md">▼7.2</span></td>
+      </tr>
+      <tr style="outline:1.5px solid var(--color-border-primary);outline-offset:-1px;">
+        <td style="font-weight:500;color:var(--color-text-primary);">Lv.9 ★ 최대낙폭</td>
+        <td>23.9% <span class="drop drop-lg">▼15.1</span></td>
+        <td>29.8% <span class="drop drop-lg">▼17.2</span></td>
+        <td>17.8% <span class="drop drop-lg">▼12.8</span></td>
+        <td>24.3% <span class="drop drop-lg">▼15.4</span></td>
+      </tr>
+      <tr>
+        <td>Lv.10</td>
+        <td>12.5% <span class="drop drop-lg">▼11.3</span></td>
+        <td>16.0% <span class="drop drop-lg">▼13.8</span></td>
+        <td>10.1% <span class="drop drop-md">▼7.7</span></td>
+        <td>11.7% <span class="drop drop-lg">▼12.7</span></td>
+      </tr>
+      <tr class="grp">
+        <td>구매</td>
+        <td>3.9%</td>
+        <td>4.6%</td>
+        <td>3.8%</td>
+        <td>3.2%</td>
+      </tr>
     </tbody>
   </table>
-  <div class="note" style="margin-top:10px;">Lv.7 기점으로 단가 우위 역전 — Lv.6까지는 install(G) 최저, Lv.7부터 action_text(G)가 동률($4.37 vs $4.39) 후 역전. 후반 퍼널일수록 행동 최적화 캠페인의 효율 우위 확인.</div>
+  <div class="note" style="margin-top:10px;">
+    <strong>이탈 패턴 — 캠페인별 구조적 차이 확인.</strong><br>
+    install(Google)은 초반 집중 이탈형으로, Lv.2 진입 시 낙폭 -13.8%p가 타 캠페인 대비 약 2배 수준. Order KPI 낙폭(-21.6%p)도 3종 중 최대. 반면 Lv.9 이후 낙폭(-12.8%p)은 가장 낮아, 초반 이탈 후 잔존 유저의 유지율은 상대적으로 안정적.<br><br>
+    action_text(Google)·install(Meta)는 중반 이탈형으로, 초반 퍼널은 양호하나 Lv.7과 Lv.9 구간에서 급락. action_text는 Lv.8→9 낙폭 -17.2%p로 전 구간 단일 최대 낙폭 — 절대 달성율은 전 구간 1위를 유지하나, 해당 구간 콘텐츠 개선 시 추가 효율 개선 여지가 가장 큼.
+  </div>
+</div>
+
+<!-- 4. 퍼널 단계별 단가 -->
+<div class="sec">
+  <div class="st">퍼널 단계별 단가 (집행 비용 ÷ 도달 유저)</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left;">단계</th>
+        <th>전체</th>
+        <th>action_text (G)</th>
+        <th>install (G)</th>
+        <th>install (Meta)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>회원가입</td><td>$2.42</td><td>$2.44</td><td>$1.63</td><td>$3.17</td></tr>
+      <tr><td>첫 합성</td><td>$2.52</td><td>$2.51</td><td>$1.72</td><td>$3.30</td></tr>
+      <tr><td>튜토리얼 오더1</td><td>$2.61</td><td>$2.56</td><td>$1.80</td><td>$3.41</td></tr>
+      <tr class="grp"><td>Order KPI</td><td>$3.15</td><td>$2.97</td><td>$2.38</td><td>$3.96</td></tr>
+      <tr><td>Lv.2</td><td>$2.92</td><td>$2.78</td><td>$2.13</td><td>$3.73</td></tr>
+      <tr><td>Lv.3</td><td>$3.11</td><td>$2.95</td><td>$2.33</td><td>$3.92</td></tr>
+      <tr><td>Lv.4</td><td>$3.49</td><td>$3.23</td><td>$2.69</td><td>$4.38</td></tr>
+      <tr><td>Lv.5</td><td>$3.83</td><td>$3.48</td><td>$2.99</td><td>$4.83</td></tr>
+      <tr><td>Lv.6</td><td>$4.13</td><td>$3.68</td><td>$3.30</td><td>$5.23</td></tr>
+      <tr><td>Lv.7</td><td>$5.20</td><td>$4.37</td><td>$4.39</td><td>$6.68</td></tr>
+      <tr><td>Lv.8</td><td>$6.13</td><td>$5.14</td><td>$5.21</td><td>$7.89</td></tr>
+      <tr><td>Lv.9</td><td>$10.02</td><td>$8.11</td><td>$8.95</td><td>$12.89</td></tr>
+      <tr><td>Lv.10</td><td>$19.09</td><td>$15.07</td><td>$15.75</td><td>$26.92</td></tr>
+      <tr class="grp"><td>구매</td><td>$61.70</td><td>$52.08</td><td>$41.90</td><td>$96.67</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Lv.7 기점으로 단가 우위 역전 — Lv.6까지는 install(G)이 최저, Lv.7부터 action_text(G)와 동률($4.37 vs $4.39) 후 역전. 후반 퍼널로 갈수록 행동 최적화 캠페인의 효율 우위 확인. install(Meta) 구매 단가 $96.67은 타 캠페인 대비 약 2배 — 유입 단가(CPI $3.13) 고(高)와 후반 퍼널 이탈이 복합 작용.</div>
 </div>
 
 </div>
